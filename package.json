@@ -16,5 +16,9 @@
     "url": "https://github.com/lbiv4/CS587_Database_Project/issues"
   },
   "homepage": "https://github.com/lbiv4/CS587_Database_Project#readme",
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.3"
+  }
 }
