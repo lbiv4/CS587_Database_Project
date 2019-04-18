@@ -1,0 +1,20 @@
+{
+  "name": "cs587_database_project",
+  "version": "1.0.0",
+  "description": "CS587 Database Project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lbiv4/CS587_Database_Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lbiv4/CS587_Database_Project/issues"
+  },
+  "homepage": "https://github.com/lbiv4/CS587_Database_Project#readme",
+  "dependencies": {}
+}
