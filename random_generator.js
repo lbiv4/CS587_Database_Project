@@ -80,4 +80,6 @@ for(let j = 0; j < tuples; j++) {
 
 console.timeEnd('test');
 
+module.exports = {uniqueRandom, uniqueRandomToString};
+
 
