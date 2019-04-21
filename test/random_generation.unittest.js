@@ -31,12 +31,22 @@ describe('Random Generation Unit Tests', function() {
         it('should produce a random, unique number from an array', function(done) {
             let dataArray = [];
 
-            for(let i = 0; i < testArray.length; i++) {
-                const num = rg.uniqueRandom(testArray);
-                expect(initialArray).to.include(num);
-                expect(dataArray).to.not.include(num);
-                dataArray.push(num);
+            /*for(let i = 0; i < 100000; i++) {
+                const str = rg.uniqueRandomToString(i);
+                expect(dataArray).to.not.include(str);
+                dataArray.push(str);
+                if(i%1000 == 0) {
+                    console.log("Done with " + i + " checks")
+                }
+            }*/
+
+            for(let j = 0; j < 100; j ++) {
+                const str = rg.uniqueRandomToString(j);
+                expect(dataArray).to.not.include(str);
+                dataArray.push(str);
             }
+            console.log(dataArray)
+
 
             done();
         });
