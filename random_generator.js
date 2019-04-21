@@ -21,8 +21,27 @@ const uniqueRandomToString = (unique) => {
     return result;
 }
 
-console.time('test');
 const tuples = process.argv[2];
+const file = process.argv[3] !== undefined ? process.argv[3] : 'test.txt';
+const columns = [
+    "unique1",   
+    "unique2",   
+    "two",   
+    "four",   
+    "ten",   
+    "twenty",   
+    "onePercent",   
+    "tenPercent",   
+    "twentyPercent",   
+    "fiftyPercent",   
+    "unique3 integer",   
+    "evenOnePercent",   
+    "oddOnePercent",   
+    "stringu1",   
+    "stringu2",   
+    "string4" 
+]
+let columnHeaders = columns.toString();
 const allValues = [];
 const x45string = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 for(let i = 0; i < tuples; i++) {
@@ -30,7 +49,7 @@ for(let i = 0; i < tuples; i++) {
 }
 
 
-fs.writeFile('test.txt', "unique1", () => {});
+fs.writeFile(file, columnHeaders, () => {});
 
 for(let j = 0; j < tuples; j++) {
     const rowValues = [];
@@ -71,14 +90,10 @@ for(let j = 0; j < tuples; j++) {
     rowValues.push(string4);
 
 
-    let rowString = rowValues.toString();
-    rowString = "\n" + rowString.substring(1, rowString.length-1);
+    let rowString = "\n" + rowValues.toString();
 
-
-    fs.appendFile('test.txt', rowString, () => {});
+    fs.appendFile(file, rowString, () => {});
 }
-
-console.timeEnd('test');
 
 module.exports = {uniqueRandom, uniqueRandomToString};
 
