@@ -1,3 +1,7 @@
+/**
+ * Main method for generating data per the Wisconsin Benchmark. See the citation in the README for the benchmark
+ * documentation and pages 8-9 for the basis of this data generation
+ */
 const fs = require('fs');
 const rg = require('./random_generator.js');
 
@@ -24,8 +28,8 @@ const columns = [
 let columnHeaders = columns.toString();
 const allValues = [];
 const x45string = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-if(tuples == undefined || tuples == NaN ||  tuples < 1) {
-    console.log("Need to pass in a non-negative number of tuples");
+if(tuples == undefined || tuples == NaN ||  tuples < 1 || tuples > 100000000) {
+    console.log("Need to pass in a tuples between 1 and 100000000");
     process.exit(1);
 }
 
