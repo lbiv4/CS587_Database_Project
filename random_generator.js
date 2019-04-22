@@ -1,6 +1,10 @@
 const fs = require('fs');
 
-
+/**
+ * Method to produce a unique random integer. Assumes that the input array is unique; from there, picks a random 
+ * value in the array and removes value for subsequent use
+ * @param {Array<int>} array An array of unique values
+ */
 const uniqueRandom = (array) => {
     const rand = Math.floor(Math.random()*array.length);
     const output = array[rand];
@@ -8,6 +12,13 @@ const uniqueRandom = (array) => {
     return output;
 }
 
+/**
+ * Method to turn an integer value into a unique string representation according the the Wisconsin Benchmark.
+ * See the README for the documentation citation and the `convert` method on page 9 of that document for 
+ * source code for this method, noting that some modications have been made to convert to Javascript and 
+ * accurately output a unique string
+ * @param {int} unique 
+ */
 const uniqueRandomToString = (unique) => {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     let num = unique; //Don't alter unique
@@ -20,65 +31,6 @@ const uniqueRandomToString = (unique) => {
     }
     return result;
 }
-
-console.time('test');
-const tuples = process.argv[2];
-const allValues = [];
-const x45string = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-for(let i = 0; i < tuples; i++) {
-    allValues.push(i);
-}
-
-
-fs.writeFile('test.txt', "unique1", () => {});
-
-for(let j = 0; j < tuples; j++) {
-    const rowValues = [];
-    const unique1 = uniqueRandom(allValues);
-    const onePercent = unique1%100;
-    let string4;
-
-    //Add values in order to array
-    rowValues.push(unique1);
-    rowValues.push(j);
-    rowValues.push(unique1%2);
-    rowValues.push(unique1%4);
-    rowValues.push(unique1%10);
-    rowValues.push(unique1%20);
-    rowValues.push(onePercent);
-    rowValues.push(unique1%10);
-    rowValues.push(unique1%5);
-    rowValues.push(unique1%2);
-    rowValues.push(unique1); //Unique3
-    rowValues.push(onePercent * 2); 
-    rowValues.push(onePercent * 2 + 1); 
-    rowValues.push(uniqueRandomToString(unique1)+x45string); //stringu1
-    rowValues.push(uniqueRandomToString(j)+x45string); //stringu2
-    switch(j%4) {
-        case 0: 
-            string4 = "AAAAxxx" + x45string;
-            break;
-        case 1: 
-            string4 = "HHHHxxx" + x45string;
-            break;
-        case 2: 
-            string4 = "OOOOxxx" + x45string;
-            break;
-        case 3: 
-            string4 = "VVVVxxx" + x45string;
-            break;
-    }
-    rowValues.push(string4);
-
-
-    let rowString = rowValues.toString();
-    rowString = "\n" + rowString.substring(1, rowString.length-1);
-
-
-    fs.appendFile('test.txt', rowString, () => {});
-}
-
-console.timeEnd('test');
 
 module.exports = {uniqueRandom, uniqueRandomToString};
 
