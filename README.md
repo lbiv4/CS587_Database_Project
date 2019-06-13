@@ -7,6 +7,9 @@ This project involves three project reports which can be found at the following 
 
 [Project - Part 2](./documentation/PROJECT_PART2.md)
 
+[Link to Slides for Project - Part 3](https://docs.google.com/presentation/d/1EQxyrammrpR5SxjKxF6Xm5muJidLCRYmRfmw7GHg5ec/edit?usp=sharing) Note that you may need to be signed in to a PSU account since the link sharing only applies to PSU 
+
+
 
 The basis of this project is the Wisconsin Benchmark and assessing database efficiency using its standards. As a result, some code is intended to duplicate steps required in the Benchmark's documentation. Any code used or related to the benchmark's documentation should be cited in comments above the code. The source document is found on our class D2L site, and the MLA citation is below:
 

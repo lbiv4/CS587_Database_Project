@@ -1,6 +1,6 @@
 CREATE TABLE TENKTUP1 (  
     unique1 integer NOT NULL,   
-    unique2 integer NOT NULL PRIMARY KEY,   
+    unique2 integer NOT NULL,   
     two integer NOT NULL,   
     four integer NOT NULL,   
     ten integer NOT NULL,   
